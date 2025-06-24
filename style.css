@@ -1,0 +1,222 @@
+/* Romance Author Website CSS - Version 2.0
+ * Romantische Farbvariante für Romance-Titel
+ * Erstellt: 24.06.2025
+ */
+
+:root {
+  --primary-rose: #d63384;
+  --secondary-pink: #f8c2d4;
+  --accent-gold: #e6b800;
+  --text-dark: #2c1810;
+  --text-light: #5d4e37;
+  --bg-blush: #fdf7f0;
+  --shadow-soft: 0 8px 32px rgba(214, 51, 132, 0.15);
+  --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--bg-blush) 0%, #f9f1f1 100%);
+  color: var(--text-dark);
+  line-height: 1.8;
+  position: relative;
+}
+
+/* Subtiler Hintergrund-Pattern für Textur */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 80%, rgba(230, 184, 0, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(214, 51, 132, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-rose) 0%, var(--secondary-pink) 50%, var(--accent-gold) 100%);
+  color: white;
+  padding: 80px 20px 60px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Eleganter Overlay-Effekt im Header */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+h1 {
+  font-size: 3.2em;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  opacity: 0.9;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+main {
+  max-width: 900px;
+  margin: -50px auto 80px auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+/* Dezenter Akzent am Rand */
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-rose), var(--accent-gold), var(--secondary-pink));
+  border-radius: 20px 20px 0 0;
+}
+
+h2 {
+  color: var(--primary-rose);
+  font-size: 2.2em;
+  margin-top: 60px;
+  margin-bottom: 25px;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* Elegante Unterstreichung für h2 */
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--primary-rose));
+  border-radius: 2px;
+}
+
+/* Erste h2 bekommt besonderen Akzent */
+h2:first-of-type {
+  margin-top: 20px;
+}
+
+h2:first-of-type::after {
+  width: 80px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--secondary-pink));
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 24px;
+  color: var(--text-light);
+  text-align: justify;
+}
+
+ul, ol {
+  margin-left: 30px;
+  margin-bottom: 25px;
+  font-size: 1.15em;
+  color: var(--text-light);
+}
+
+li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+/* Stylische Bullet Points */
+ul li::marker {
+  color: var(--accent-gold);
+  font-size: 1.2em;
+}
+
+/* Hover-Effekt für interaktive Elemente */
+a {
+  color: var(--primary-rose);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: var(--accent-gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: var(--accent-gold);
+}
+
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 1em;
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  main {
+    margin: -30px 20px 60px 20px;
+    padding: 30px 25px;
+  }
+  
+  h2 {
+    font-size: 1.9em;
+  }
+  
+  p, ul, ol {
+    font-size: 1.1em;
+  }
+}
