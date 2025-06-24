@@ -192,7 +192,7 @@ a:hover {
 }
 
 footer {
-  text-align: center;
+  text-align: center!Important;
   padding: 50px 20px;
   font-size: 1em;
   color: var(--text-light);
